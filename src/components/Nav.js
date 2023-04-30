@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function Nav() {
   return (
-    <div className='bg-zinc-900 h-20 '>
+    <div className='bg-zinc-950 h-20 sticky top-0'>
 
         <div className='flex space-x-2 lg:space-x-10 pl-10 pr-10 w-full xl:max-w-7xl lg:max-w-4xl mx-auto'>
 
