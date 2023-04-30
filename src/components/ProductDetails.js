@@ -49,9 +49,20 @@ function ProductDetails() {
               </div>
 
               <div className='flex mx-auto mr-0'>
-                <button className='bg-zinc-800 text-[#fff] pt-1 pb-1 pl-5 pr-5 rounded-full text-sm hover:bg-zinc-500'>
-                  Add To Cart
-                </button>
+                <form className='space-x-1'>
+                  <label className='text-sm text-zinc-600'>Size Chart:</label>
+                  <select id="size" name="size" className='bg-inherit text-zinc-600 text-sm focus:outline-none cursor-pointer'>
+                    <option value="US7">US 7</option>
+                    <option value="US8">US 8</option>
+                    <option value="US9">US 9</option>
+                    <option value="US10">US 10</option>
+                    <option value="US11">US 11</option>
+                    <option value="US12">US 12</option>
+                  </select>
+                  <button type='submit' className='bg-zinc-800 text-[#fff] pt-3 pb-3 pl-6 pr-6 rounded-full text-sm hover:bg-zinc-500'>
+                    Add To Cart
+                  </button>
+                </form>
               </div>
               </div>
 
