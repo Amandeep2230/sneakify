@@ -10,7 +10,7 @@ function Nav() {
 
             <div className='text-[#fff] pt-5 '>
             <h1 className='text-lg lg:text-2xl'>
-                <Link href='#'>Sneakify</Link>
+                <Link href='#' id='logo'>sneakify</Link>
             </h1>
             </div>
 

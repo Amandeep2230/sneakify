@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -29,4 +31,12 @@ body {
 
 .container-snap::-webkit-scrollbar {
   display: none;
+}
+
+#logo {
+  font-family: 'Permanent Marker', cursive;
+}
+
+#logo2 {
+  font-family: 'Permanent Marker', cursive;
 }

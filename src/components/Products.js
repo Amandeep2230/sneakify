@@ -3,7 +3,7 @@ import Card from './Card'
 
 function Products() {
   return (
-    <div className='bg-zinc-950 h-full'>
+    <div className='bg-zinc-950 h-full pb-10'>
         
         <div className='w-full xl:max-w-7xl lg:max-w-4xl mx-auto'>
 
