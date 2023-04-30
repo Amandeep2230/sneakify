@@ -6,7 +6,7 @@ import air_jordans_1_3 from '../../sneaks/air_jordans_1-3.png'
 
 function ProductDetails() {
   return (
-    <div className='bg-zinc-300 h-screen'>
+    <div className='bg-zinc-300 h-full pb-10'>
 
         <div className='w-full xl:max-w-7xl lg:max-w-4xl mx-auto'>
 
@@ -50,7 +50,6 @@ function ProductDetails() {
 
               <div className='flex mx-auto mr-0'>
                 <form className='space-x-1'>
-                  <label className='text-sm text-zinc-600'>Size Chart:</label>
                   <select id="size" name="size" className='bg-inherit text-zinc-600 text-sm focus:outline-none cursor-pointer'>
                     <option value="US7">US 7</option>
                     <option value="US8">US 8</option>
