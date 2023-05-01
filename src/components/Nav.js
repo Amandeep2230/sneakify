@@ -1,8 +1,12 @@
 import React from 'react'
 import {SearchIcon, ShoppingCartIcon} from "@heroicons/react/outline"
 import Link from 'next/link'
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 function Nav() {
+
+    const {data: session} = useSession();
+
   return (
     <div className='bg-zinc-950 h-20 sticky top-0'>
 
@@ -23,20 +27,30 @@ function Nav() {
                         text-sm rounded-md focus:outline-none text-gray-500"/>
             </div>
 
-            <div className='pt-7 flex space-x-4'>
+            <div className='flex space-x-4'>
 
-                <div>
+                <div className='pt-7'>
                 <Link href='#'>
                 <ShoppingCartIcon className='h-5 w-5 text-[#fff]'/>
                 </Link>
                 </div>
 
-                <div>
-                <Link href='#'>
-                <h3 className='text-sm text-[#fff]'>
-                    SignIn
-                </h3>
-                </Link>
+                <div className='pt-6'>
+                {
+                    session ? (
+                        <>
+                        <button className='text-sm text-[#fff]' onClick={signOut}>
+                            SignOut
+                        </button>
+                        </>
+                    ) : (
+                        <>
+                        <button className='text-sm text-[#fff]' onClick={signIn}>
+                            SignIn
+                        </button>
+                        </>
+                    )
+                }
                 </div>
             </div>
             </div>

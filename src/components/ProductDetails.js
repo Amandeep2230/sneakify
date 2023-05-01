@@ -12,22 +12,24 @@ function ProductDetails() {
 
         <div className='flex flex-col'>
 
-            <div className='flex overflow-x-scroll snap-mandatory snap-x scrollbar scrollbar-track-gray-400/20 scrollbar-thin scrollbar-thumb-zinc-400'>
+            <div className='overflow-x-scroll snap-mandatory snap-x scrollbar scrollbar-track-gray-400/20 scrollbar-thin scrollbar-thumb-zinc-400'>
+            <div className='flex max-w-xs sm:max-w-sm lg:max-w-lg xl:max-w-xl'>
                 
                 <Image
                 src={air_jordans_1_1}
-                className='snap-center max-w-xs sm:max-w-sm lg:max-w-lg xl:max-w-xl'
+                className='snap-center'
                 />
 
                 <Image
                 src={air_jordans_1_2}
-                className='snap-center max-w-xs sm:max-w-sm lg:max-w-lg xl:max-w-xl'
+                className='snap-center'
                 />
 
                 <Image
                 src={air_jordans_1_3}
-                className='snap-center max-w-xs sm:max-w-sm lg:max-w-lg xl:max-w-xl'
+                className='snap-center'
                 />
+            </div>
             </div>
 
             <div className='pl-10 pr-10 pt-10'>
@@ -43,7 +45,7 @@ function ProductDetails() {
                 </h3>
                 <h1> | </h1>
                 <h3>
-                  $165
+                  CAD 165
                 </h3>
               </div>
               </div>

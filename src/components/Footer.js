@@ -4,10 +4,10 @@ function Footer() {
   return (
     <div className='bg-zinc-950 h-full pt-5'>
         
-        
+        <hr className='border-zinc-700'>
+        </hr>
         <div className='w-full xl:max-w-7xl lg:max-w-4xl mx-auto'>
-            <hr className='border-zinc-700'>
-            </hr>
+            
 
             <h1 id='logo2' className='text-[#fff] text-center pt-10 mb-1 mt-4'>
                 sneakify
