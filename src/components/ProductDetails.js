@@ -1,10 +1,19 @@
-import React from 'react'
 import Image from 'next/image'
-import air_jordans_1_1 from '../../sneaks/air_jordans_1-1.png'
-import air_jordans_1_2 from '../../sneaks/air_jordans_1-2.png'
-import air_jordans_1_3 from '../../sneaks/air_jordans_1-3.png'
+import React, { useEffect, useState } from 'react'
+import { db } from '../../firebase';
+import { doc, getDoc, collection, onSnapshot } from "firebase/firestore";
+import Description from './Description';
 
-function ProductDetails() {
+ function ProductDetails() {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+      return onSnapshot(collection(db, "sneaks/air_jordan_1/shoe"), snapshot => {
+        setProducts(snapshot.docs);
+      });
+  }, [db])
+
   return (
     <div className='bg-zinc-300 h-full pb-10'>
 
@@ -12,62 +21,46 @@ function ProductDetails() {
 
         <div className='flex flex-col'>
 
-            <div className='overflow-x-scroll snap-mandatory snap-x scrollbar scrollbar-track-gray-400/20 scrollbar-thin scrollbar-thumb-zinc-400'>
-            <div className='flex max-w-xs sm:max-w-sm lg:max-w-lg xl:max-w-xl'>
+        <div className='overflow-x-scroll snap-mandatory snap-x scrollbar scrollbar-track-gray-400/20 scrollbar-thin scrollbar-thumb-zinc-400'>
+        <div className='flex max-w-xs sm:max-w-sm lg:max-w-lg xl:max-w-xl'>
+      
+                {products.map((product) => (
+                  <Image
+                  src={product.data().img1}
+                  className='snap-center'
+                  width={500}
+                  height={500}
+                  />
+                ))}
+
+                {products.map((product) => (
+                  <Image
+                  src={product.data().img2}
+                  className='snap-center'
+                  width={500}
+                  height={500}
+                  />
+                ))}
+
+                {products.map((product) => (
+                  <Image
+                  src={product.data().img3}
+                  className='snap-center'
+                  width={500}
+                  height={500}
+                  />
+                ))}
                 
-                <Image
-                src={air_jordans_1_1}
-                className='snap-center'
-                />
-
-                <Image
-                src={air_jordans_1_2}
-                className='snap-center'
-                />
-
-                <Image
-                src={air_jordans_1_3}
-                className='snap-center'
-                />
-            </div>
-            </div>
-
-            <div className='pl-10 pr-10 pt-10'>
-
-              <div className='flex'>
-              <div>
-              <h1 className='text-zinc-600 text-2xl'>
-                Air Jordan 1 Mid
-              </h1>
-              <div className='flex mt-1 space-x-4 text-zinc-600 text-sm'>
-                <h3>
-                  Men's Shoes
-                </h3>
-                <h1> | </h1>
-                <h3>
-                  CAD 165
-                </h3>
               </div>
               </div>
 
-              <div className='flex mx-auto mr-0'>
-                <form className='space-x-1'>
-                  <select id="size" name="size" className='bg-inherit text-zinc-600 text-sm focus:outline-none cursor-pointer'>
-                    <option value="US7">US 7</option>
-                    <option value="US8">US 8</option>
-                    <option value="US9">US 9</option>
-                    <option value="US10">US 10</option>
-                    <option value="US11">US 11</option>
-                    <option value="US12">US 12</option>
-                  </select>
-                  <button type='submit' className='bg-zinc-800 text-[#fff] pt-3 pb-3 pl-6 pr-6 rounded-full text-sm hover:bg-zinc-500'>
-                    Add To Cart
-                  </button>
-                </form>
-              </div>
-              </div>
-
-            </div>
+              {products.map((product) => (
+                  <Description
+                  name = {product.data().name}
+                  category = {product.data().category}
+                  price = {product.data().price}
+                  />
+                ))}
 
             <div className='pl-10 pr-10 pt-10'>
 
