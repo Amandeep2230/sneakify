@@ -15,9 +15,6 @@ export default function Home() {
       {/* Nav */}
       <Nav />
 
-      {/* Product Details */}
-      <ProductDetails />
-
       {/* Products */}
       <Products />
 

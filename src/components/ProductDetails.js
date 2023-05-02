@@ -4,15 +4,7 @@ import { db } from '../../firebase';
 import { doc, getDoc, collection, onSnapshot } from "firebase/firestore";
 import Description from './Description';
 
- function ProductDetails() {
-
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-      return onSnapshot(collection(db, "sneaks/air_jordan_1/shoe"), snapshot => {
-        setProducts(snapshot.docs);
-      });
-  }, [db])
+ function ProductDetails({img1, img2, img3, shoeName, price, category}) {
 
   return (
     <div className='bg-zinc-300 h-full pb-10'>
@@ -24,43 +16,36 @@ import Description from './Description';
         <div className='overflow-x-scroll snap-mandatory snap-x scrollbar scrollbar-track-gray-400/20 scrollbar-thin scrollbar-thumb-zinc-400'>
         <div className='flex max-w-xs sm:max-w-sm lg:max-w-lg xl:max-w-xl'>
       
-                {products.map((product) => (
+                
                   <Image
-                  src={product.data().img1}
+                  src={img1}
                   className='snap-center'
                   width={500}
                   height={500}
                   />
-                ))}
 
-                {products.map((product) => (
                   <Image
-                  src={product.data().img2}
+                  src={img2}
                   className='snap-center'
                   width={500}
                   height={500}
                   />
-                ))}
 
-                {products.map((product) => (
                   <Image
-                  src={product.data().img3}
+                  src={img3}
                   className='snap-center'
                   width={500}
                   height={500}
                   />
-                ))}
                 
               </div>
               </div>
 
-              {products.map((product) => (
                   <Description
-                  name = {product.data().name}
-                  category = {product.data().category}
-                  price = {product.data().price}
+                  name = {shoeName}
+                  category = {category}
+                  price = {price}
                   />
-                ))}
 
             <div className='pl-10 pr-10 pt-10'>
 
