@@ -1,21 +1,21 @@
 import React from 'react'
 import Image from 'next/image'
-import air_jordan_1 from "../../sneaks/air_jordans_1-1.png"
 
-function Card() {
+function Card({name, price, img1}) {
   return (
-    <div className='bg-zinc-700 rounded-xl cursor-pointer p-5 hover:ring-zinc-600 hover:ring-1'>
+    <div className=' bg-zinc-700 rounded-xl cursor-pointer p-5 hover:ring-zinc-600 hover:ring-1'>
         
         <Image
-        src={air_jordan_1}
-        className=''
+        src={img1}
+        height={400}
+        width={400}
         />
         <div className='text-zinc-400'>
             <h1 className='text-lg'>
-                Air Jordan 1
+                {name}
             </h1>
             <h2 className='text-sm'>
-                $165
+                CAD {price}
             </h2>
         </div>
 
