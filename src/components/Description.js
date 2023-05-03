@@ -1,6 +1,52 @@
-import React from 'react'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import React, { useState } from 'react'
+import { db } from '../../firebase';
+import { signIn, signOut, useSession } from 'next-auth/react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function Description({name, category, price}) {
+function Description({name, category, price, img}) {
+
+    const {data: session} = useSession();
+
+    const addCart = async () => {
+
+    const docRef = await addDoc(collection(db, 'users', session.user.email, 'cart'), {
+        username: session.user.name,
+        name: {name},
+        price: {price},
+        productImg: {img},
+        timestamp: serverTimestamp()
+    })
+    successfulNotification()
+    }
+
+    const signInNotification = () => {
+        toast.error('Please sign in to add to cart.', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "dark",
+            });
+    }
+
+    const successfulNotification = () => {
+        toast.success('Item added to cart successfully!', {
+            position: "top-center",
+            autoClose: 4000,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "dark",
+            });
+    }
+
   return (
     <div>
         <div className='pl-10 pr-10 pt-10'>
@@ -22,7 +68,6 @@ function Description({name, category, price}) {
             </div> 
 
             <div className='flex mx-auto mr-0'>
-            <form className='space-x-1'>
             <select id="size" name="size" className='bg-inherit text-zinc-600 text-sm focus:outline-none cursor-pointer'>
                 <option value="US7">US 7</option>
                 <option value="US8">US 8</option>
@@ -31,14 +76,28 @@ function Description({name, category, price}) {
                 <option value="US11">US 11</option>
                 <option value="US12">US 12</option>
             </select>
-            <button type='submit' className='bg-zinc-800 text-[#fff] pt-3 pb-3 pl-6 pr-6 rounded-full text-sm hover:bg-zinc-500'>
-                Add To Cart
-            </button>
-            </form>
+            {
+                    session ? (
+                        <>
+                        <button type='submit' className='bg-zinc-800 text-[#fff] pt-3 pb-3 pl-6 pr-6 rounded-full text-sm hover:bg-zinc-500 disabled:bg-zinc-500 disabled:cursor-not-allowed'
+                        onClick={addCart}>
+                            Add To Cart
+                        </button>
+                        </>
+                    ) : (
+                        <>
+                        <button type='submit' className='bg-zinc-800 text-[#fff] pt-3 pb-3 pl-6 pr-6 rounded-full text-sm hover:bg-zinc-500'
+                        onClick={signInNotification}>
+                            Add To Cart
+                        </button>
+                        </>
+                    )
+            }
             </div>
             </div>
 
             </div>
+            <ToastContainer />
     </div>
   )
 }

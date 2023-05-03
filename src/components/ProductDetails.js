@@ -45,6 +45,7 @@ import Description from './Description';
                   name = {shoeName}
                   category = {category}
                   price = {price}
+                  img = {img1}
                   />
 
             <div className='pl-10 pr-10 pt-10'>
