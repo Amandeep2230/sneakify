@@ -8,14 +8,20 @@ import 'react-toastify/dist/ReactToastify.css';
 function Description({name, category, price, img}) {
 
     const {data: session} = useSession();
+    const [selectedValue, setSelectedValue] = useState('');
+
+    const sizeSelect = ((event) => {
+        setSelectedValue(event.target.value)
+    })
 
     const addCart = async () => {
-
+    
     const docRef = await addDoc(collection(db, 'users', session.user.email, 'cart'), {
         username: session.user.name,
         name: {name},
         price: {price},
         productImg: {img},
+        size: {selectedValue},
         timestamp: serverTimestamp()
     })
     successfulNotification()
@@ -68,13 +74,14 @@ function Description({name, category, price, img}) {
             </div> 
 
             <div className='flex mx-auto mr-0'>
-            <select id="size" name="size" className='bg-inherit text-zinc-600 text-sm focus:outline-none cursor-pointer'>
-                <option value="US7">US 7</option>
-                <option value="US8">US 8</option>
-                <option value="US9">US 9</option>
-                <option value="US10">US 10</option>
-                <option value="US11">US 11</option>
-                <option value="US12">US 12</option>
+            <select onChange={sizeSelect} value={selectedValue} name="size" className='bg-inherit text-zinc-600 text-sm focus:outline-none cursor-pointer'>
+                <option value="null" defaultChecked>Size</option>
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+                <option value="12">US 12</option>
             </select>
             {
                     session ? (
@@ -93,6 +100,7 @@ function Description({name, category, price, img}) {
                         </>
                     )
             }
+
             </div>
             </div>
 
