@@ -86,7 +86,7 @@ function Description({name, category, price, img}) {
             {
                     session ? (
                         <>
-                        <button type='submit' className='bg-zinc-800 text-[#fff] pt-3 pb-3 pl-6 pr-6 rounded-full text-sm hover:bg-zinc-500 disabled:bg-zinc-500 disabled:cursor-not-allowed'
+                        <button className='bg-zinc-800 text-[#fff] pt-3 pb-3 pl-6 pr-6 rounded-full text-sm hover:bg-zinc-500 disabled:bg-zinc-500 disabled:cursor-not-allowed'
                         onClick={addCart}>
                             Add To Cart
                         </button>

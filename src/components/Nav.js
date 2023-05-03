@@ -2,10 +2,13 @@ import React from 'react'
 import {SearchIcon, ShoppingCartIcon} from "@heroicons/react/outline"
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { useRouter } from 'next/router';
 
 function Nav() {
 
     const {data: session} = useSession();
+
+    const router = useRouter();
 
   return (
     <div className='bg-zinc-950 h-20 sticky top-0'>
@@ -14,7 +17,9 @@ function Nav() {
 
             <div className='text-[#fff] pt-5 '>
             <h1 className='text-lg lg:text-2xl'>
-                <Link href='#' id='logo'>sneakify</Link>
+                <button id='logo' onClick={() => router.push('/')}>
+                    sneakify
+                </button>
             </h1>
             </div>
 
@@ -30,9 +35,9 @@ function Nav() {
             <div className='flex space-x-4'>
 
                 <div className='pt-7'>
-                <Link href='#'>
+                <button onClick={() => router.push('/cart')}>
                 <ShoppingCartIcon className='h-5 w-5 text-[#fff]'/>
-                </Link>
+                </button>
                 </div>
 
                 <div className='pt-6'>

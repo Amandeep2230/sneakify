@@ -60,7 +60,7 @@ function Products() {
       category = {category}
       />
     
-    <div className='bg-zinc-950 h-full pb-10'>
+    <div className='bg-zinc-950 h-full pb-20'>
         
         <div className='w-full xl:max-w-7xl lg:max-w-4xl mx-auto'>
 
