@@ -3,12 +3,27 @@ import {SearchIcon, ShoppingCartIcon} from "@heroicons/react/outline"
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Nav() {
 
     const {data: session} = useSession();
 
     const router = useRouter();
+
+    const signInNotification = () => {
+        toast.error('Please sign in to proceed to cart.', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "dark",
+            });
+    }
 
   return (
     <div className='bg-zinc-950 h-20 sticky top-0'>
@@ -35,9 +50,18 @@ function Nav() {
             <div className='flex space-x-4'>
 
                 <div className='pt-7'>
-                <button onClick={() => router.push('/cart')}>
-                <ShoppingCartIcon className='h-5 w-5 text-[#fff]'/>
-                </button>
+                {
+                    session ? (
+                        <button onClick={() => router.push('/cart')}>
+                        <ShoppingCartIcon className='h-5 w-5 text-[#fff]'/>
+                        </button>
+                    ) : (
+                        <button onClick={signInNotification}>
+                        <ShoppingCartIcon className='h-5 w-5 text-[#fff]'/>
+                        </button>
+                    )
+                }
+                
                 </div>
 
                 <div className='pt-6'>
