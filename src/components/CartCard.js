@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import air_jordan_1 from "./../../sneaks/air_jordan_1_retro.png"
 import Image from 'next/image'
 import {XIcon} from "@heroicons/react/outline"
