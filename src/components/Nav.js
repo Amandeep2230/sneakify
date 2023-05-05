@@ -25,6 +25,10 @@ function Nav() {
             });
     }
 
+    const signO = () => {
+        signOut({callbackUrl: '/'});
+    }
+
   return (
     <div className='bg-zinc-950 h-20 sticky top-0'>
 
@@ -68,7 +72,7 @@ function Nav() {
                 {
                     session ? (
                         <>
-                        <button className='text-sm text-[#fff]' onClick={signOut}>
+                        <button className='text-sm text-[#fff]' onClick={signO}>
                             SignOut
                         </button>
                         </>
