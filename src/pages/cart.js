@@ -22,6 +22,8 @@ function Cart() {
       });
   }, [db])
 
+  
+
   const createCheckoutSession = async () => {
     const stripe = await stripePromise;
     let prods = []
@@ -31,7 +33,8 @@ function Cart() {
             itemName: item.data().name.name,
             itemPrice: item.data().price.price,
             itemSize: item.data().size.selectedValue,
-            itemImg: item.data().productImg.img
+            itemImg: item.data().productImg.img,
+            itemId: item.id
           })
     ))
 
@@ -75,7 +78,7 @@ function Cart() {
             <div className='pl-10 pr-10 pt-10 flex justify-center'>
                 <button className='bg-zinc-800 text-[#fff] pt-3 pb-3 pl-10 pr-10 rounded-full text-sm hover:bg-zinc-500 disabled:bg-zinc-500 disabled:cursor-not-allowed'
                 role='link' onClick={createCheckoutSession}>
-                    Pay $165
+                    Checkout
                 </button>
             </div>
         </div>

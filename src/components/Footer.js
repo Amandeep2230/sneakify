@@ -19,7 +19,7 @@ function Footer() {
                 This project is for educational purposes only and doesn't deal with selling any product.
             </h3>
             <h3 className='text-zinc-500 text-sm text-center pb-10'>
-                Developed by Amandeep Singh Bhalla &#x2764;
+                Developed by <a href='https://amandeep2230.github.io/' target='_blank' className='underline'>Amandeep Singh Bhalla</a>      &#x2764;
             </h3>
 
             <div className='flex justify-center'>

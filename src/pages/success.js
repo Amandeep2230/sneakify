@@ -7,7 +7,7 @@ import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react'
 
 function success() {
-
+    const router = useRouter();
     const handleHome = async () => {
         router.push('/')
     }
@@ -18,10 +18,9 @@ function success() {
 
   return (
     <div className=''>
-        <Nav />
         <div className='bg-zinc-300 h-screen pt-10'>
             <div className='w-full xl:max-w-7xl lg:max-w-4xl mx-auto'>
-                <div className='bg-[#fff] rounded-lg text-[#111] p-10'>
+                <div className='bg-[#fff] rounded-lg text-[#111] p-20'>
                     <div className='flex justify-center'>
                     <BadgeCheckIcon className='h-20 w-20 align-center text-[#59981A]' />
                     </div>

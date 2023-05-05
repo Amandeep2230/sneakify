@@ -1,6 +1,5 @@
 import { buffer } from 'micro';
 import * as admin from 'firebase-admin';
-import { db } from '../../../firebase';
 
 //to establish connection to firebase on backend
 const serviceAccount = require('../../../permissions.json');

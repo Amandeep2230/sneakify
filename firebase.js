@@ -8,12 +8,12 @@ import {getStorage} from "firebase/storage"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAJsL2UoW-aDniQk9D5Sfnq8KkW8c5QN-U",
-  authDomain: "sneakify-c48c0.firebaseapp.com",
-  projectId: "sneakify-c48c0",
-  storageBucket: "sneakify-c48c0.appspot.com",
-  messagingSenderId: "72364891528",
-  appId: "1:72364891528:web:2b5b1a912de9f3d7efae3d"
+  apiKey: "add_yours",
+  authDomain: "add_yours",
+  projectId: "add_yours",
+  storageBucket: "add_yours",
+  messagingSenderId: "add_yours",
+  appId: "add_yours"
 };
 
 // Initialize Firebase

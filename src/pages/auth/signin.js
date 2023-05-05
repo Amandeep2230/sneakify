@@ -25,7 +25,7 @@ function signIn({ providers }) {
         </div>
         <div className="mt-10">
             <h1 className="mb-10">OR</h1>
-            <Link href="/" className="hover:text-[#fff]">
+            <Link href="/" className="hover:text-[#fff] underline">
               Return To Home
             </Link>
         </div>
