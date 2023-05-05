@@ -1,5 +1,6 @@
 import { buffer } from 'micro';
 import * as admin from 'firebase-admin';
+import { db } from '../../../firebase';
 
 //to establish connection to firebase on backend
 const serviceAccount = require('../../../permissions.json');
@@ -13,6 +14,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const endpointSecret = process.env.STRIPE_SIGNING_SECRET;
 
 const compOrder = async (session) => {
+
     return app
     .firestore()
     .collection('users')
@@ -24,7 +26,7 @@ const compOrder = async (session) => {
     })
     .then(() => {
         console.log(`Success: Order ${session.id} has been added to the db`)
-    })
+    });
 }
 
 export default async (req, res) => {

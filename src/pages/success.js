@@ -1,11 +1,34 @@
 import Nav from '@component/components/Nav'
-import React from 'react'
 import {BadgeCheckIcon} from "@heroicons/react/solid"
 import { useRouter } from 'next/router';
+import { doc, deleteDoc, collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { db } from '../../firebase';
+import { useSession } from 'next-auth/react';
+import React, { useEffect, useState } from 'react'
 
 function success() {
 
+    const { data: session } = useSession();
     const router = useRouter();
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+
+        return onSnapshot(query(collection(db, 'users', session.user.email, 'cart'), orderBy('timestamp', 'desc')), snapshot => {
+        setItems(snapshot.docs);
+        });
+    }, [db])
+
+    let id = items.map((item)=>item.id)
+
+    const handleHome = async () => {
+        await deleteDoc(doc(db, 'users', session.user.email, 'cart', id))
+    }
+
+    const handleOrder = async () => {
+        await deleteDoc(doc(db, 'users', session.user.email, 'cart', id));
+        router.push('/cart')
+    }
 
   return (
     <div className=''>
@@ -20,11 +43,11 @@ function success() {
                     <h2 className='text-sm text-center mt-2'>Your order has been placed</h2>
                     <div className='flex justify-center mt-10'>
                         <button className='bg-zinc-800 text-[#fff] pt-2 pb-2 pl-5 pr-5 rounded-xl mr-5 hover:bg-zinc-500'
-                        onClick={() => router.push('/')}>
+                        >
                             Home
                         </button>
                         <button className='bg-zinc-800 text-[#fff] pt-2 pb-2 pl-5 pr-5 rounded-xl hover:bg-zinc-500'
-                        onClick={() => router.push('/cart')}>
+                        >
                             View Order
                         </button>
                     </div>
