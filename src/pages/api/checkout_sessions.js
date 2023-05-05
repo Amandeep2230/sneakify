@@ -27,7 +27,7 @@ export default async (req, res) => {
             cancel_url: `${process.env.HOST}/cart`,
             metadata: {
                 email,
-                images: JSON.stringify(items.map(item=>item.itemImg))
+                names: JSON.stringify(items.map((item)=>item.itemName))
             },
         });
         res.status(200).json({ id: session.id })
