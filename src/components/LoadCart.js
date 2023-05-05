@@ -28,6 +28,7 @@ function LoadCart() {
                 <div className='grid gap-4 grid-cols-1'>
                     {items.map((item) => (
                         <CartCard 
+                        key={item.id}
                         img = {item.data().productImg.img}
                         name = {item.data().name.name}
                         price = {item.data().price.price}

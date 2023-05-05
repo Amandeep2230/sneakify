@@ -69,6 +69,7 @@ function Products() {
               
                 {products.map((product) => (
                   <Card
+                  key={product.id}
                   name = {product.data().name}
                   price = {product.data().price}
                   img1 = {product.data().img1}

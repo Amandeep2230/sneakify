@@ -19,6 +19,7 @@ function CartCard({img, name, price, size, id}) {
         src={img}
         width={100}
         height={100}
+        alt={name}
         />
         <h1 className='text-sm col-span-1 flex justify-center items-center'>
             {name}

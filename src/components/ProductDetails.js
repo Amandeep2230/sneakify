@@ -22,6 +22,7 @@ import Description from './Description';
                   className='snap-center'
                   width={500}
                   height={500}
+                  alt={shoeName}
                   />
 
                   <Image
@@ -29,6 +30,7 @@ import Description from './Description';
                   className='snap-center'
                   width={500}
                   height={500}
+                  alt={shoeName}
                   />
 
                   <Image
@@ -36,6 +38,7 @@ import Description from './Description';
                   className='snap-center'
                   width={500}
                   height={500}
+                  alt={shoeName}
                   />
                 
               </div>

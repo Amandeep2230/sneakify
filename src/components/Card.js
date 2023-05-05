@@ -17,6 +17,7 @@ function Card({name, price, img1, category, img2, img3, id, onMessage}) {
         src={img1}
         height={400}
         width={400}
+        alt={name}
         />
         <div className='text-zinc-400'>
             <h1 className='text-lg'>
