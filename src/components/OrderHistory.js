@@ -1,28 +1,40 @@
-import React from 'react'
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { useSession } from 'next-auth/react'
+import React, { useEffect, useState } from 'react'
+import { db } from '../../firebase';
+import OrderData from './OrderData';
 
 function OrderHistory() {
+
+    const { data: session } = useSession();
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        return onSnapshot(query(collection(db, 'users', session.user.email, 'orders'), orderBy('timestamp', 'desc')), snapshot => {
+            setItems(snapshot.docs);
+        })
+    }, [db])
+
+
   return (
     <div className='mt-2'>
         <h1>
-            Order History
+            Your Orders
         </h1>
-        <div className='bg-[#fff] rounded-xl text-zinc-400 grid grid-cols-3 grid-rows-1 items-center p-5 mt-5'>
-        <h1 className='text-sm col-span-1 flex justify-center items-center'>
-            Order Id: Cowjihkkfjdfhjdkjp
-        </h1>
-        <div className='text-sm col-span-1 flex justify-center items-center flex-col'>
-            <ul>
-                <li>Items:</li>
-                <li>Air Jordan 1 Retro</li>
-                <li>Air Jordan 1</li>
-            </ul>
-        </div>
+        <hr className='border-zinc-500 mt-1'></hr>
+        {items.map((product) => (
+                  <OrderData
+                  key={product.id}
+                  names = {product.data().name}
+                  price = {product.data().amount}
+                  id = {product.id}
+                  timestamp = {product.data().timestamp}
+                  />
+                ))}
         
-        <h2 className='text-sm col-span-1 flex justify-center items-center'>
-            Total: CAD 165
-        </h2>
     </div>
-    </div>
+    
+    
   )
 }
 
