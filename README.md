@@ -10,6 +10,7 @@ Features
 - Keep a record of your previous orders
 
 Deploy
+
 You can deploy this app on your end following a few changes:
 - Set up your firebase, google cloud and stripe account
 - Store env variables based on your project (Google Secrets, Stripe Secrets, Next Auth URL, Host URL)
