@@ -7,11 +7,13 @@ Welcome to Sneakify! An ecommerce store project that allows users to buy sneaker
 <h3>
 Features
 </h3>
-- Sign in using google account
-- Browsing through the sneaker catalogue
-- Adding your favourite kicks to the cart
-- Pay and checkout
-- Keep a record of your previous orders
+<ul>
+  <li> Sign in using google account</li>
+  <li>Browsing through the sneaker </li>
+  <li>Adding your favourite kicks to the cart</li>
+  <li>Pay and checkout</li>
+  <li>Keep a record of your previous orders</li>
+</ul>
 
 <h3>
 Deploy
