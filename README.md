@@ -3,7 +3,7 @@ Welcome to Sneakify! An ecommerce store project that allows users to buy sneaker
 
 <div style:"width: 60px;">
 <img 
-src="![portfolio9](https://user-images.githubusercontent.com/66684807/236599375-fa64c664-1f0a-42f9-8a8a-8aef34339445.png)">
+src="![portfolio9](https://user-images.githubusercontent.com/66684807/236599375-fa64c664-1f0a-42f9-8a8a-8aef34339445.png)"/>
 </div>
 
 <h3>
