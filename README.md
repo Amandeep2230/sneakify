@@ -25,6 +25,16 @@ You can deploy this app on your end following a few changes:
 
 Live Demo: https://sneakify-henna.vercel.app/
 
+<h3>
+Upcoming Features/Fixes
+</h3>
+<ul>
+<li>Clear cart upon successful payment of order</li>
+<li>Dynamically display the total of all items in the cart before checkout</li>
+<li>Fix the time in order history in client's timezone</li>
+<li>Implement search</li>
+</ul>
+
 <h3>Technologies</h3>
 <div style="display: flex;">
   <img src="https://user-images.githubusercontent.com/66684807/236600822-08717d2a-ba3f-45ed-89f4-5f77d24e5721.png" width="40" style="margin-right: 10px;">
