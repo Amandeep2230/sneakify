@@ -21,7 +21,8 @@ Deploy
 
 You can deploy this app on your end following a few changes:
 - Set up your firebase, google cloud and stripe account
-- Store env variables based on your project (Google Secrets, Stripe Secrets, Next Auth URL, Host URL)
+- Store env variables based on your project (GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, NEXTAUTH_URL, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, HOST, STRIPE_SIGNING_SECRET, NEXT_PUBLIC_SECRET)
+- Generate a private key for your service account on firebase, copy the JSON file to your project and rename it to permissions.json 
 
 Live Demo: https://sneakify-henna.vercel.app/
 
