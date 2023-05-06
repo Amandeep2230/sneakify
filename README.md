@@ -1,7 +1,7 @@
 <h1>Sneakify</h1>
 Welcome to Sneakify! An ecommerce store project that allows users to buy sneakers matching their style. 
 
-<br>
+
 ![portfolio9](https://user-images.githubusercontent.com/66684807/236599375-fa64c664-1f0a-42f9-8a8a-8aef34339445.png)
 
 <h3>
@@ -27,11 +27,11 @@ Live Demo: https://sneakify-henna.vercel.app/
 
 <h3>Technologies</h3>
 <div style="display: flex;">
-  <img src="https://user-images.githubusercontent.com/66684807/236599303-a76a861c-8ae1-410a-ad7f-5e0389f8f232.png" width="40" style="margin-right: 10px;">
-  <img src="https://user-images.githubusercontent.com/66684807/236600198-0d61b008-c538-4d0f-94b7-d2979f3c284e.png" width="40" style="margin-right: 10px;">
-  <img src="https://user-images.githubusercontent.com/66684807/236600285-7bf8839c-5641-4a50-8664-977582412438.png" width="40" style="margin-right: 10px;">
-  <img src="https://user-images.githubusercontent.com/66684807/236599322-a52e9f97-16b9-4d55-93ab-d468c3d320c3.png" width="40" style="margin-right: 10px;">
-  <img src="https://user-images.githubusercontent.com/66684807/236600301-9fc76398-e62d-40fb-9658-a7bcebba2dfd.png" width="40">
+  <img src="https://user-images.githubusercontent.com/66684807/236600372-9c034e36-a9dd-4f94-a257-3fa5b70f38bc.png" width="40" style="margin-right: 10px;">
+  <img src="https://user-images.githubusercontent.com/66684807/236600391-337d029c-2a69-4b82-9b1b-1b58c9b65972.png" width="40" style="margin-right: 10px;">
+  <img src="https://user-images.githubusercontent.com/66684807/236600415-cec0bc8e-3b7c-4db3-b01a-52bff7411c0c.png" width="40" style="margin-right: 10px;">
+  <img src="https://user-images.githubusercontent.com/66684807/236600433-ecb8cd60-a839-4b79-be1c-84135b2d9237.png" width="40" style="margin-right: 10px;">
+  <img src="https://user-images.githubusercontent.com/66684807/236600450-a9b83572-c118-4915-89e0-2e043cc66e95.png" width="40">
 </div>
 
 
